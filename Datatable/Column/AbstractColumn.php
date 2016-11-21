@@ -162,6 +162,13 @@ abstract class AbstractColumn implements ColumnInterface, OptionsInterface
     protected $editableIf;
 
     /**
+     * Editable route, if null default route is used
+     *
+     * @var String|null
+     */
+    protected $editableRoute;
+
+    /**
      * Name of datatable view.
      *
      * @var string
@@ -738,6 +745,30 @@ abstract class AbstractColumn implements ColumnInterface, OptionsInterface
     public function getEditableIf()
     {
         return $this->editableIf;
+    }
+
+    /**
+     * Set editableIf.
+     *
+     * @param string|null $editableRoute
+     *
+     * @return $this
+     */
+    public function setEditableRoute($editableRoute)
+    {
+        $this->editableRoute = $editableRoute;
+
+        return $this;
+    }
+
+    /**
+     * Get editableRoute.
+     *
+     * @return string|null
+     */
+    public function getEditableRoute()
+    {
+        return $this->editableRoute;
     }
 
     /**
