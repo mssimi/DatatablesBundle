@@ -93,7 +93,7 @@ class Column extends AbstractColumn
         $resolver->setAllowedTypes('default', 'string');
         $resolver->setAllowedTypes('editable', 'bool');
         $resolver->setAllowedTypes('editable_if', array('Closure', 'null'));
-        $resolver->setAllowedTypes('editable_route', 'string','null');
+        $resolver->setAllowedTypes('editable_route', array('string','null'));
 
         return $this;
     }
