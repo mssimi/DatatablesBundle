@@ -23,7 +23,7 @@
             emptytext: 'false',
             {% endif %}
             name: '{{ column.data }}',
-            url: "{% if column.editable_route is not null %}{{ column.editable_route }}{% else %}{{ path('sg_datatables_edit') }}{% endif %}",
+            url: "{% if column.editableRoute is not null %}{{ column.editableRoute }}{% else %}{{ path('sg_datatables_edit') }}{% endif %}",
             title: '{{ column.title }} ' + "{{ 'datatables.actions.edit'|trans({}, 'messages') }}",
             params: function (params) {
                 params.entity = '{{ datatable.entity|e('js') }}';
