@@ -836,7 +836,7 @@ abstract class AbstractColumn implements ColumnInterface, OptionsInterface
      */
     public function getDataProperty()
     {
-        return '['.preg_replace('/\[([^]]+)\]/','[0]','productVariant.product.descr[, ].name').']';
+        return '['.str_replace('.','][',preg_replace('/\[([^]]+)\]/','[0]','productVariant.product.descr[, ].name')).']';
     }
 
     /**
