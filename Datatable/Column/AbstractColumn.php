@@ -830,6 +830,16 @@ abstract class AbstractColumn implements ColumnInterface, OptionsInterface
     }
 
     /**
+     * Get dataProperty.
+     *
+     * @return string
+     */
+    public function getDataProperty()
+    {
+        return '['.preg_replace('/\[([^]]+)\]/','[0]','productVariant.product.descr[, ].name').']';
+    }
+
+    /**
      * Get accessor.
      *
      * @return PropertyAccess|\Symfony\Component\PropertyAccess\PropertyAccessor
