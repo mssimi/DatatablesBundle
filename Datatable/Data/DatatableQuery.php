@@ -763,10 +763,15 @@ class DatatableQuery
     {
         $this->setSelectFrom();
         $this->setLeftJoins($this->qb);
+        $this->setWhere($this->qb);
         $this->setWhereAllCallback($this->qb);
         $this->setOrderBy();
+        $data = $this->execute()->getArrayResult();
 
-        return $this->execute()->getArrayResult();
+        $formatter = new DatatableFormatter($this);
+        $formatter->runFormatter($data);
+
+        return $formatter->getOutput();
     }
 
     //-------------------------------------------------

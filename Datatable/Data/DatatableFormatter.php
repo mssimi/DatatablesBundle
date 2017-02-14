@@ -42,10 +42,14 @@ class DatatableFormatter
     // Formatter
     //-------------------------------------------------
 
-    public function runFormatter()
+    /**
+     * @param array $paginator
+     */
+    public function runFormatter(array $paginator = array())
     {
         $columns = $this->datatableQuery->getColumns();
-        $paginator = $this->datatableQuery->getPaginator();
+        if(!$paginator)
+            $paginator = $this->datatableQuery->getPaginator();
         $lineFormatter = $this->datatableQuery->getLineFormatter();
 
         foreach ($paginator as $row) {
