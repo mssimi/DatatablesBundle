@@ -23,6 +23,18 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 interface DatatableViewInterface
 {
+
+    /**
+     * Get response.
+     *
+     * @param bool $buildQuery
+     * @param bool $outputWalkers
+     *
+     * @return Response
+     * @throws Exception
+     */
+    public function createResponse($buildQuery = true, $outputWalkers = false);
+
     /**
      * Builds the datatable.
      *

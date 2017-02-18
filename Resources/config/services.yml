@@ -26,6 +26,7 @@ services:
             - '@translator.default'
             - '@router'
             - '@doctrine.orm.entity_manager'
+            - '@sg_datatables.query'
 
     sg_datatables.query:
         class: Sg\DatatablesBundle\Datatable\Data\DatatableDataManager

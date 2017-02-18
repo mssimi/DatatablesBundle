@@ -16,6 +16,7 @@ use Sg\DatatablesBundle\Datatable\Column\ColumnBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
+use Sg\DatatablesBundle\Datatable\Data\DatatableDataManager;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -66,6 +67,13 @@ abstract class AbstractDatatableView implements DatatableViewInterface
      * @var EntityManagerInterface
      */
     protected $em;
+
+    /**
+     * The datatable data manager service.
+     *
+     * @var DatatableDataManager
+     */
+    protected $datatableDataManager;
 
     /**
      * Actions on the top of the table (e.g. 'New' button).
@@ -153,17 +161,19 @@ abstract class AbstractDatatableView implements DatatableViewInterface
      * Ctor.
      *
      * @param AuthorizationCheckerInterface $authorizationChecker
-     * @param TokenStorageInterface         $securityToken
-     * @param TranslatorInterface           $translator
-     * @param RouterInterface               $router
-     * @param EntityManagerInterface        $em
+     * @param TokenStorageInterface $securityToken
+     * @param TranslatorInterface $translator
+     * @param RouterInterface $router
+     * @param EntityManagerInterface $em
+     * @param DatatableDataManager $datatableDataManager
      */
     public function __construct(
         AuthorizationCheckerInterface $authorizationChecker,
         TokenStorageInterface $securityToken,
         TranslatorInterface $translator,
         RouterInterface $router,
-        EntityManagerInterface $em
+        EntityManagerInterface $em,
+        DatatableDataManager $datatableDataManager
     )
     {
         $this->assertTheNameOnlyContainsAllowedCharacters();
@@ -173,6 +183,7 @@ abstract class AbstractDatatableView implements DatatableViewInterface
         $this->translator = $translator;
         $this->router = $router;
         $this->em = $em;
+        $this->datatableDataManager = $datatableDataManager;
 
         $this->topActions = new TopActions();
         $this->tabs = new Tabs();
@@ -190,6 +201,14 @@ abstract class AbstractDatatableView implements DatatableViewInterface
     //-------------------------------------------------
     // DatatableViewInterface
     //-------------------------------------------------
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createResponse($buildQuery = true, $outputWalkers = false)
+    {
+        return $this->datatableDataManager->getQueryFrom($this)->getResponse($buildQuery, $outputWalkers);
+    }
 
     /**
      * {@inheritdoc}
