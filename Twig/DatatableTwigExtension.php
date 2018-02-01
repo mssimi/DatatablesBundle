@@ -134,7 +134,7 @@ class DatatableTwigExtension extends Twig_Extension
      */
     public function datatableRender(Twig_Environment $twig, AbstractDatatableView $datatable)
     {
-        return $twig->render('SgDatatablesBundle:Datatable:datatable.html.twig', $this->getOptions($datatable));
+        return $twig->render('@SgDatatables/Datatable/datatable.html.twig', $this->getOptions($datatable));
     }
 
     /**
@@ -148,7 +148,7 @@ class DatatableTwigExtension extends Twig_Extension
      */
     public function datatableRenderHtml(Twig_Environment $twig, AbstractDatatableView $datatable)
     {
-        return $twig->render('SgDatatablesBundle:Datatable:datatable_html.html.twig', $this->getOptions($datatable));
+        return $twig->render('@SgDatatables/Datatable/datatable_html.html.twig', $this->getOptions($datatable));
     }
 
     /**
@@ -162,7 +162,7 @@ class DatatableTwigExtension extends Twig_Extension
      */
     public function datatableRenderJs(Twig_Environment $twig, AbstractDatatableView $datatable)
     {
-        return $twig->render('SgDatatablesBundle:Datatable:datatable_js.html.twig', $this->getOptions($datatable));
+        return $twig->render('@SgDatatables/Datatable/datatable_js.html.twig', $this->getOptions($datatable));
     }
 
     /**
@@ -204,7 +204,7 @@ class DatatableTwigExtension extends Twig_Extension
     public function datatableIcon(Twig_Environment $twig, $icon, $label = '')
     {
         if ($icon)
-            return $twig->render('SgDatatablesBundle:Action:icon.html.twig', array('icon' => $icon, 'label' => $label));
+            return $twig->render('@SgDatatables/Action/icon.html.twig', array('icon' => $icon, 'label' => $label));
         else
             return $label;
     }

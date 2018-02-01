@@ -194,7 +194,7 @@ class SliderFilter extends AbstractFilter
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Filters:filter_slider.html.twig';
+        return '@SgDatatables/Filters/filter_slider.html.twig';
     }
 
     /**

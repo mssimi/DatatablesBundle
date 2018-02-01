@@ -69,7 +69,7 @@ class ProgressBarColumn extends AbstractColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:progress_bar.html.twig';
+        return '@SgDatatables/Column/progress_bar.html.twig';
     }
 
     /**

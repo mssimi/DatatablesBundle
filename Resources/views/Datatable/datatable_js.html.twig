@@ -3,39 +3,39 @@
 
         if (typeof window.pipelineFunctionAlreadyLoaded == 'undefined') {
             {% if view_ajax.pipeline > 0 %}
-               {% include "SgDatatablesBundle:Datatable:pipeline.js.twig" %}
+               {% include "@SgDatatables/Datatable/pipeline.js.twig" %}
             {% endif %}
         }
 
         var selector = "#{{ view_table_id }}";
 
         var defaults = {
-            {% include "SgDatatablesBundle:Datatable:language.html.twig" %}
+            {% include "@SgDatatables/Datatable/language.html.twig" %}
         };
 
         var features = {
-            {% include "SgDatatablesBundle:Datatable:features.html.twig" %}
+            {% include "@SgDatatables/Datatable/features.html.twig" %}
         };
 
         var options = {
-            {% include "SgDatatablesBundle:Datatable:options.html.twig" %}
+            {% include "@SgDatatables/Datatable/options.html.twig" %}
         };
 
         var callbacks = {
-            {% include "SgDatatablesBundle:Datatable:callbacks.html.twig" %}
+            {% include "@SgDatatables/Datatable/callbacks.html.twig" %}
         };
 
         var ajax = {
-            {% include "SgDatatablesBundle:Datatable:ajax.html.twig" %}
+            {% include "@SgDatatables/Datatable/ajax.html.twig" %}
         };
 
         var searchCols = {
-            {% include "SgDatatablesBundle:Datatable:search_columns.html.twig" %}
+            {% include "@SgDatatables/Datatable/search_columns.html.twig" %}
         };
 
         setTimeout(function() {
             var columns = {
-                {% include "SgDatatablesBundle:Datatable:columns.html.twig" %}
+                {% include "@SgDatatables/Datatable/columns.html.twig" %}
             };
 
             $.extend(defaults, features);
@@ -71,20 +71,20 @@
                         )
                     {% endif %}
                 {% endif %}
-                {% include "SgDatatablesBundle:Datatable:before_events.js.twig" %}
+                {% include "@SgDatatables/Datatable/before_events.js.twig" %}
                 .DataTable(defaults)
                         .on('draw.dt', function() {
-                            {% include "SgDatatablesBundle:Datatable:editable.html.twig" %}
+                            {% include "@SgDatatables/Datatable/editable.html.twig" %}
                             {% if true == view_features.highlight %}
-                                {% include "SgDatatablesBundle:Datatable:highlight.js.twig" %}
+                                {% include "@SgDatatables/Datatable/highlight.js.twig" %}
                             {% endif %}
                         })
-                        {% include "SgDatatablesBundle:Datatable:after_events.js.twig" %}
+                        {% include "@SgDatatables/Datatable/after_events.js.twig" %}
                         {% if view_features.extensions.responsive is defined %}
                             {% if true == view_features.extensions.responsive %}
                                 .on( 'responsive-display', function ( e, datatable, row, showHide, update ) {
                                     if (showHide) {
-                                        {% include "SgDatatablesBundle:Datatable:editable.html.twig" %}
+                                        {% include "@SgDatatables/Datatable/editable.html.twig" %}
                                     }
                                 });
                             {% endif %}
@@ -141,11 +141,11 @@
             {% endif %}
 
             {% if view_multiselect %}
-                {% include "SgDatatablesBundle:Action:multiselect_actions.html.twig" with {'column': view_multiselect_column} %}
+                {% include "@SgDatatables/Action/multiselect_actions.html.twig" with {'column': view_multiselect_column} %}
             {% endif %}
 
             {% if view_tabs.actions|length %}
-                {% include "SgDatatablesBundle:Datatable:tabs.js.twig" %}
+                {% include "@SgDatatables/Datatable/tabs.js.twig" %}
             {% endif %}
         }, features.delay);
     });
@@ -156,7 +156,7 @@
 
     <script type="text/javascript">
         if (typeof window.renderFunctionsAlreadyLoaded == 'undefined') {
-            {% include "SgDatatablesBundle:Datatable:render_functions.js.twig" %}
+            {% include "@SgDatatables/Datatable/render_functions.js.twig" %}
         }
     </script>
 

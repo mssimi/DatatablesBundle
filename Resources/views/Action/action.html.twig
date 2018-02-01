@@ -18,10 +18,10 @@ var routeParameters, attributes, visibleFlag, roleFlag;
 {# build actionsString #}
 {% if actions is iterable %}
     {% for action in actions %}
-        {% include 'SgDatatablesBundle:Action:actions_string.html.twig' %}
+        {% include '@SgDatatables/Action/actions_string.html.twig' %}
     {% endfor %}
 {% else %}
-    {% include 'SgDatatablesBundle:Action:actions_string.html.twig' with { 'action': actions } %}
+    {% include '@SgDatatables/Action/actions_string.html.twig' with { 'action': actions } %}
 {% endif %}
 
 {# endHtml - for ActionColumn #}

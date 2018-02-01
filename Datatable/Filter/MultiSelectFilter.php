@@ -32,7 +32,7 @@ class MultiSelectFilter extends SelectFilter
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Filters:filter_multiselect.html.twig';
+        return '@SgDatatables/Filters/filter_multiselect.html.twig';
     }
 
     /**

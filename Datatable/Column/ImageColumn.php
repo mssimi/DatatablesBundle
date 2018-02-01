@@ -103,7 +103,7 @@ class ImageColumn extends AbstractColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:image.html.twig';
+        return '@SgDatatables/Column/image.html.twig';
     }
 
     /**
@@ -131,7 +131,7 @@ class ImageColumn extends AbstractColumn
 
                 if (array_key_exists($field, $row) && null === $row[$field]) {
                     $row[$field] = $datatableQuery->getTwig()->render(
-                        'SgDatatablesBundle:Helper:render_image.html.twig',
+                        '@SgDatatables/Helper/render_image.html.twig',
                         array(
                             'image_name' => null,
                             'path' => $this->getRelativePath(),
@@ -139,7 +139,7 @@ class ImageColumn extends AbstractColumn
                     );
                 } else {
                     $render = $datatableQuery->getTwig()->render(
-                        'SgDatatablesBundle:Helper:render_image.html.twig',
+                        '@SgDatatables/Helper/render_image.html.twig',
                         array(
                             'image_name' => $this->getAccessor()->getValue($row, $this->getDqlProperty()),
                             'path' => $this->getRelativePath(),
@@ -152,7 +152,7 @@ class ImageColumn extends AbstractColumn
                     $row,
                     $this->getDqlProperty(),
                     $datatableQuery->getTwig()->render(
-                        'SgDatatablesBundle:Helper:render_image.html.twig',
+                        '@SgDatatables/Helper/render_image.html.twig',
                         array(
                             'image_name' => $this->getAccessor()->getValue($row, $this->getDqlProperty()),
                             'path' => $this->getRelativePath(),
@@ -174,7 +174,7 @@ class ImageColumn extends AbstractColumn
     protected function renderImage($imageName, Twig_Environment $twig)
     {
         return $twig->render(
-            'SgDatatablesBundle:Helper:ii_render_image.html.twig',
+            '@SgDatatables/Helper/ii_render_image.html.twig',
             array(
                 'image_name' => $imageName,
                 'filter' => $this->getImagineFilter(),

@@ -6,7 +6,7 @@
  # For the full copyright and license information, please view the LICENSE
  # file that was distributed with this source code.
  #}
-{% extends 'SgDatatablesBundle:Filters:filter.html.twig' %}
+{% extends '@SgDatatables/Filters/filter.html.twig' %}
 
 {% set filter_initial_value %}
     {% if column.filter.value is iterable %}

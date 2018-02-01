@@ -51,7 +51,7 @@ class Column extends AbstractColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:column.html.twig';
+        return '@SgDatatables/Column/column.html.twig';
     }
 
     /**

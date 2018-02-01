@@ -19,7 +19,7 @@ Represents the most basic column, including many-to-one and one-to-one relations
 
 ### Default template
 
-SgDatatablesBundle:Column:column.html.twig
+@SgDatatables/Column/column.html.twig
 
 ### Options
 
@@ -89,7 +89,7 @@ Represents a column for many-to-many or one-to-many associations.
 
 ### Default template
 
-SgDatatablesBundle:Column:array.html.twig
+@SgDatatables/Column/array.html.twig
 
 ### Options
 
@@ -166,7 +166,7 @@ Represents a virtual column.
 
 ### Default template
 
-SgDatatablesBundle:Column:column.html.twig
+@SgDatatables/Column/column.html.twig
 
 ### Options
 
@@ -205,7 +205,7 @@ Represents a boolean column.
 
 ### Default template
 
-SgDatatablesBundle:Column:boolean.html.twig
+@SgDatatables/Column/boolean.html.twig
 
 ### Options
 
@@ -257,7 +257,7 @@ Represents a datetime column.
 
 ### Default template
 
-SgDatatablesBundle:Column:datetime.html.twig
+@SgDatatables/Column/datetime.html.twig
 
 ### Options
 
@@ -300,7 +300,7 @@ Represents a timeago column.
 
 ### Default template
 
-SgDatatablesBundle:Column:timeago.html.twig
+@SgDatatables/Column/timeago.html.twig
 
 ### Options
 
@@ -338,7 +338,7 @@ Represents an action column.
 
 ### Default template
 
-SgDatatablesBundle:Column:action.html.twig
+@SgDatatables/Column/action.html.twig
 
 ### Options
 
@@ -425,7 +425,7 @@ ___
 
 ### Default template
 
-SgDatatablesBundle:Column:multiselect.html.twig
+@SgDatatables/Column/multiselect.html.twig
 
 ### Options
 
@@ -588,7 +588,7 @@ class Post
 
 ### Default template
 
-SgDatatablesBundle:Column:image.html.twig
+@SgDatatables/Column/image.html.twig
 
 ### Options
 
@@ -713,7 +713,7 @@ class Media
 
 ### Default template
 
-SgDatatablesBundle:Column:image.html.twig
+@SgDatatables/Column/image.html.twig
 
 ### Options
 
@@ -763,7 +763,7 @@ This Column relies on [Bootstrap3](http://getbootstrap.com/).
 
 ### Default template
 
-SgDatatablesBundle:Column:progress_bar.html.twig
+@SgDatatables/Column/progress_bar.html.twig
 
 ### Options
 
@@ -821,5 +821,5 @@ use it in the Datatable class:
     ...
 ```
 
-- Define `getTemplate` to talk to datatables api : (ex. `SgDatatablesBundle:Column:column.html.twig`)
+- Define `getTemplate` to talk to datatables api : (ex. `@SgDatatables/Column/column.html.twig`)
 - Implement the `renderContent` function to render complexe contents

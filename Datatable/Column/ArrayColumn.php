@@ -64,7 +64,7 @@ class ArrayColumn extends Column
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:array.html.twig';
+        return '@SgDatatables/Column/array.html.twig';
     }
 
     /**

@@ -11,7 +11,7 @@
     {{ view_tabs.startHtml|raw }}
     <ul class="nav nav-tabs">
         {% for tab in view_tabs.actions %}
-            {% include 'SgDatatablesBundle:Action:tabs.html.twig' %}
+            {% include '@SgDatatables/Action/tabs.html.twig' %}
         {% endfor %}
     </ul>
     {{ view_tabs.endHtml|raw }}
@@ -20,7 +20,7 @@
 {% if true == view_actions.isAddIfClosure %}
     {{ view_actions.startHtml|raw }}
     {% for action in view_actions.actions %}
-        {% include 'SgDatatablesBundle:Action:top_actions.html.twig' %}
+        {% include '@SgDatatables/Action/top_actions.html.twig' %}
     {% endfor %}
     {{ view_actions.endHtml|raw }}
 {% endif %}

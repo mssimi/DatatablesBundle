@@ -54,7 +54,7 @@ class MultiselectColumn extends ActionColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:multiselect.html.twig';
+        return '@SgDatatables/Column/multiselect.html.twig';
     }
 
     /**

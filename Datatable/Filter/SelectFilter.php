@@ -36,7 +36,7 @@ class SelectFilter extends TextFilter
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Filters:filter_select.html.twig';
+        return '@SgDatatables/Filters/filter_select.html.twig';
     }
 
     /**

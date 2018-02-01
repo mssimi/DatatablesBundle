@@ -90,7 +90,7 @@ class Select2Filter extends SelectFilter
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Filters:filter_select2.html.twig';
+        return '@SgDatatables/Filters/filter_select2.html.twig';
     }
 
     /**

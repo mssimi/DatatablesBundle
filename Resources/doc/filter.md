@@ -107,7 +107,7 @@ class PostDatatable extends AbstractDatatableView
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_text.html.twig
+@SgDatatables/Filters/filter_text.html.twig
 
 #### Options
 
@@ -137,7 +137,7 @@ $this->columnBuilder
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_select.html.twig
+@SgDatatables/Filters/filter_select.html.twig
 
 #### Options
 
@@ -168,7 +168,7 @@ $this->columnBuilder
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_select2.html.twig
+@SgDatatables/Filters/filter_select2.html.twig
 
 #### Options
 
@@ -268,7 +268,7 @@ public function select2Color(Request $request)
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_multiselect.html.twig
+@SgDatatables/Filters/filter_multiselect.html.twig
 
 #### Options
 
@@ -303,7 +303,7 @@ This Filter relies on the [Bootstrap-Daterangepicker](https://github.com/dangros
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_daterange.html.twig
+@SgDatatables/Filters/filter_daterange.html.twig
 
 #### Options
 
@@ -330,7 +330,7 @@ This Filter relies on the [Bootstrap-Slider](https://github.com/seiyria/bootstra
 
 #### Default template
 
-SgDatatablesBundle:Filters:filter_slider.html.twig
+@SgDatatables/Filters/filter_slider.html.twig
 
 #### Options
 

@@ -44,7 +44,7 @@ class TimeagoColumn extends AbstractColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:timeago.html.twig';
+        return '@SgDatatables/Column/timeago.html.twig';
     }
 
     /**

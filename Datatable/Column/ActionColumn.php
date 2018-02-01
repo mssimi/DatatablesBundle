@@ -70,7 +70,7 @@ class ActionColumn extends AbstractColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:action.html.twig';
+        return '@SgDatatables/Column/action.html.twig';
     }
 
     /**

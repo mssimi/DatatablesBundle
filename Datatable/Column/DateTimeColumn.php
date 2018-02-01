@@ -42,7 +42,7 @@ class DateTimeColumn extends TimeagoColumn
      */
     public function getTemplate()
     {
-        return 'SgDatatablesBundle:Column:datetime.html.twig';
+        return '@SgDatatables/Column/datetime.html.twig';
     }
 
     /**
