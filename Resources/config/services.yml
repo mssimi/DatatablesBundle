@@ -33,8 +33,12 @@ services:
             - '@doctrine.orm.entity_manager'
 
     sg_datatables.query:
-        class: Sg\DatatablesBundle\Datatable\Data\DatatableDataManager
+        alias: Sg\DatatablesBundle\Datatable\Data\DatatableDataManager
         public: true
+
+    Sg\DatatablesBundle\Datatable\Data\DatatableDataManager:
+        class: Sg\DatatablesBundle\Datatable\Data\DatatableDataManager
+        public: false
         arguments:
             - '@request_stack'
             - '@sg_datatables.serializer'
